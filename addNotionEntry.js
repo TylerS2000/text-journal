@@ -10,7 +10,7 @@ const [month, day, year] = [
             title: [
                 {
                     text: {
-                        content: `${month}/${day}/${year}`, 
+                        content: `${month+1}/${day}/${year}`, 
                     },
                 },
             ],
@@ -26,12 +26,11 @@ const [month, day, year] = [
                 "object": "block",
                 "type": "paragraph",
                 "paragraph": {
-                    "rich_text": [{ "type": "text", "text": { "content": "You made this page using the Notion API. Pretty cool, huh? We hope you enjoy building with us." } }]
+                    "rich_text": [{ "type": "text", "text": { "content": `${entry}` } }]
                 }
             }
         ]
     });
-    console.log(response);
 }
 
 module.exports = addNotionEntry;
