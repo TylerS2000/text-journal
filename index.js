@@ -16,10 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 setInterval(() => {
-    msgTime= "15 58 0"
+    msgTime= "0 0 0"
     const currentTime = new Date();
     const time = `${currentTime.getHours()} ${currentTime.getMinutes()} ${currentTime.getSeconds()}`
-    console.log(time);
     if(time===msgTime){
         client.messages.create({
             body: 'Daily Journal: What are some things you did well today? What are some things you could have done better? What are somethings you learned/can improve upon?',
