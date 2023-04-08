@@ -46,23 +46,6 @@ app.post('/', (req, res) => {
 });
 
 
-
-app.get('/sendSMS', (req, res) => {
-    client.messages.create({
-        body: 'Wow you stink!',
-        to: process.env.USERNUMBER, // Replace with the recipient's phone number
-        from: process.env.TWILIONUMBER // Replace with your Twilio phone number
-    })
-        .then(message => {
-            console.log(message.sid);
-            res.send('SMS sent!');
-        })
-        .catch(error => {
-            console.log(error);
-            res.send('Error sending SMS');
-        });
-});
-
 app.listen(8080, () => {
     console.log('Server is running on port 3000');
 });
